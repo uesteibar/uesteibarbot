@@ -9,6 +9,7 @@
   "author": "uesteibar",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.12.4",
     "twit": "^1.1.20"
   }
 }
