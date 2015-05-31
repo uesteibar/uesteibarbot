@@ -10,8 +10,6 @@ var Twit = require('twit');
 	    access_token_secret:  process.env.ACCESS_TOKEN_SECRET || process.env.UESTEIBARBOT_ACCESS_TOKEN_SECRET
 	};
 
-	console.log(USER_CONFIG);
-
  	var uesteibarbot = {
  		name: 'uesteibarbot',
  		bot: new Twit(USER_CONFIG),
