@@ -3,6 +3,8 @@ var http = require('http');
 var express = require('express');
 var app = express();
 
+console.log(process.env.UESTEIBARBOT_CONSUMER_KEY);
+
 var uesteibarbot = require('./uesteibar-bot').newBot();
 
 uesteibarbot.startVigilante('Unai Esteibar', 'uesteibar');

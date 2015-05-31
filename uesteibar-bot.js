@@ -4,11 +4,13 @@ var Twit = require('twit');
  var newBot = function() {
 
  	var USER_CONFIG = {
-	    consumer_key:         process.env.CONSUMER_KEY,
-	    consumer_secret:      process.env.CONSUMER_SECRET,
-	    access_token:         process.env.ACCESS_TOKEN,
-	    access_token_secret:  process.env.ACCESS_TOKEN_SECRET
+	    consumer_key:         process.env.CONSUMER_KEY || process.env.UESTEIBARBOT_CONSUMER_KEY,
+	    consumer_secret:      process.env.CONSUMER_SECRET || process.env.UESTEIBARBOT_CONSUMER_SECRET,
+	    access_token:         process.env.ACCESS_TOKEN || process.env.UESTEIBARBOT_ACCESS_TOKEN,
+	    access_token_secret:  process.env.ACCESS_TOKEN_SECRET || process.env.UESTEIBARBOT_ACCESS_TOKEN_SECRET
 	};
+
+	console.log(USER_CONFIG);
 
  	var uesteibarbot = {
  		name: 'uesteibarbot',
