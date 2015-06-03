@@ -24,7 +24,16 @@ var Twit = require('twit');
 			var stream = this.bot.stream('statuses/filter', { track: name});
 			var self = this;
 			stream.on('tweet', function (tweet) {
-				self.tweet('Hey @' + username + '! @' + tweet.user.screen_name + ' is talking about you!', tweet.id_str);
+				var isMentioningUser = false;
+				for (var i = 0; i < tweet.entities.user_mentions.length; i++) {
+					if (tweet.entities.user_mentions[i].screen_name == username) {
+						isMentioningUser = true;
+					}
+				}
+
+				if (!isMentioningUser) {
+					self.tweet('Hey @' + username + '! @' + tweet.user.screen_name + ' is talking about you!', tweet.id_str);
+				}
 			});
 		},
 		startAutoDefense: function() {
